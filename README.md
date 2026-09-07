@@ -1,42 +1,19 @@
-# Cohort-Repo-Template
-This is the core structure of Trailblazer Labs repos
-# [Project Name]
+# Education Trailblazers Case Spam Zapper
 
-![Project Banner](./assets/banner.png)
+## Description
 
-## Overview
-[1-2 sentences explaining exactly what this asset does and who it is for.]
+Every organization needs to be more efficient, and organizations that have implemented Email-to-Case know that spam is a drag on efficiency. This solution allows users to click a Spam checkbox from a Listview or Detail page to remove spam from their queue or assigned Cases.
 
-## The Problem It Solves
-[Describe the pain point, manual process, or architectural gap this project addresses.]
+**How it works:** Once a user clicks the Spam checkbox, automation reassigns the Case to a Spam Queue. This allows permissioned users to review the Cases to ensure real support issues were inadvertently marked as spam, and then scheduled automation deletes the Case. This simple automation makes it easier for users to address active Cases while keeping unstructured, service-related data clean of non-support records and communications. This is particularly important if you're using AI for insights to improve service and support.
 
-## See it in Action
-![Demo GIF or Image](./assets/demo.gif)
-*(Optional: walkthrough video here)*
+## Tags
 
-## Quick Start Guide
+`Agentforce Service` `Support` `Efficiency` `Flow` `Automation`
 
-### Prerequisites
-- [e.g., Requires Agentforce or Service Cloud]
-- [e.g., My Domain must be enabled]
+## Track Topic
 
-### Option 1: 1-Click Install (Recommended for Admins where applicable)
-Deploy this asset directly to your Sandbox or Developer Edition org without touching the command line.
+Builder
 
-[![Deploy to Salesforce](https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png)](https://githubsfdeploy.herokuapp.com?owner=Trailblazer-Labs&repo=your-repo-name)
+## License
 
-### Option 2: Install via Salesforce CLI (For Developers where applicable)
-If you prefer to deploy using a local environment, run the following commands:
-
-1. Clone this repository:
-   `git clone https://github.com/Trailblazer-Labs/your-repo-name.git`
-2. Deploy the metadata to your target org:
-   `sf project deploy start --target-org your-alias`
-
-### Post-Installation Steps
-1. Assign the necessary permission sets:
-   `sf org assign permset --name Your_Perm_Set`
-2. [Add any manual setup steps here, like activating a Flow or adjusting a layout]
-
-## About the Creator
-Built by [@YourGitHubUsername](https://github.com/YourGitHubUsername) as part of the Trailblazer Labs Builder in Residence Cohort.
+Apache License 2.0
