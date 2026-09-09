@@ -2,8 +2,6 @@
 
 One-click spam handling for Email-to-Case. Agents check a **Spam** checkbox on a Case; automation instantly closes it and moves it to a dedicated **Spam Queue**, and a daily scheduled job permanently deletes spam Cases after a 2-day retention period.
 
-An [Education Trailblazers](https://educationtrailblazers.org) member solution, distributed as an **unlocked second-generation package** under the `EDUtb` namespace.
-
 ## What's included
 
 | Component | API Name | Type |
@@ -33,24 +31,6 @@ Short version:
 - Deletion is a hard delete (Recycle Bin, then gone).
 
 See the [guide](docs/GUIDE.md#known-limitations--troubleshooting) for the full list.
-
-## Development
-
-Standard Salesforce DX project. Requires the `sf` CLI and access to the EDUtb Dev Hub (the `EDUtb` namespace is linked there).
-
-```bash
-# create a scratch org
-sf org create scratch -f config/project-scratch-def.json -a case-spam-scratch -v <devhub>
-
-# push source
-sf project deploy start -o case-spam-scratch
-
-# create the package (one-time)
-sf package create --name "EDUtb Case Spam" --package-type Unlocked --path force-app -v <devhub>
-
-# create a package version
-sf package version create --package "EDUtb Case Spam" --installation-key-bypass --wait 20 -v <devhub>
-```
 
 After installing a package version in a test org, complete the manual setup in [docs/GUIDE.md](docs/GUIDE.md) before testing.
 
