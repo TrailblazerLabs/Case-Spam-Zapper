@@ -1,4 +1,4 @@
-# EDUtb Case Spam
+# Case Spam Zapper
 
 One-click spam handling for Email-to-Case. Agents check a **Spam** checkbox on a Case; automation instantly closes it and moves it to a dedicated **Spam Queue**, and a daily scheduled job permanently deletes spam Cases after a 2-day retention period.
 
