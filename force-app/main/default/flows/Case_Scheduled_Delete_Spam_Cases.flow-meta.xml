@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>X2_Days_in_Spam_Queue</name>
+        <label>2 Days in Spam Queue?</label>
+        <locationX>182</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ClosedDate</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>f_TwoDaysAgo</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Spam_Case</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Automatically deletes Cases flagged as Spam after 2 days.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>f_TwoDaysAgo</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate}-2</expression>
+    </formulas>
+    <interviewLabel>Case - Scheduled - Delete Spam Cases {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case - Scheduled - Delete Spam Cases</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Delete_Spam_Case</name>
+        <label>Delete Spam Case</label>
+        <locationX>50</locationX>
+        <locationY>360</locationY>
+        <inputReference>$Record</inputReference>
+    </recordDeletes>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>X2_Days_in_Spam_Queue</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case_Owner_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Spam Queue</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Spam__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2026-09-09</startDate>
+            <startTime>03:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
