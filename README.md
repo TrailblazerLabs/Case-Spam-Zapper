@@ -34,9 +34,11 @@ See the [guide](docs/GUIDE.md#known-limitations--troubleshooting) for the full l
 
 After installing a package version in a test org, complete the manual setup in [docs/GUIDE.md](docs/GUIDE.md) before testing.
 
-## Versioning
+## Tags
+Agentforce Education Policies Agent Prompt
 
-| Version | Notes |
-|---|---|
-| 1.1 | Fixed spam-flag field reference in the before-save Flow; scheduled Flow set to Daily; retention aligned to 2 days; full documentation |
-| 1.0 | Initial release |
+## Track Topic
+Strategist
+
+## License
+Apache License 2.0
