@@ -15,6 +15,8 @@ Not included (created manually during setup): the **Spam Queue** (a Case Queue w
 
 ## Installation & setup
 
+Install this solution in a sandbox: http://githubsfdeploy.herokuapp.com/?owner=TrailblazerLabs&repo=Case-Spam-Zapper
+
 Full instructions, screenshots, verification steps, and troubleshooting live in **[docs/GUIDE.md](docs/GUIDE.md)**.
 
 Short version:
