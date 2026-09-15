@@ -13,7 +13,7 @@
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.ClosedDate</leftValueReference>
-                <operator>LessThan</operator>
+                <operator>GreaterThanOrEqualTo</operator>
                 <rightValue>
                     <elementReference>f_TwoDaysAgo</elementReference>
                 </rightValue>
@@ -82,7 +82,9 @@
         </filters>
         <object>Case</object>
         <schedule>
+            <dayOfMonthToRun>0</dayOfMonthToRun>
             <frequency>Daily</frequency>
+            <frequencyNumber>0</frequencyNumber>
             <startDate>2026-09-09</startDate>
             <startTime>03:00:00.000Z</startTime>
         </schedule>
